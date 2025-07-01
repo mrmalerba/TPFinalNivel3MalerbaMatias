@@ -5,6 +5,10 @@ VisualStudioVersion = 17.14.36212.18 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TPFinalNivel3MalerbaMatias", "TPFinalNivel3MalerbaMatias\TPFinalNivel3MalerbaMatias.csproj", "{AC0F383F-52A6-4F07-A9DB-FEE3BA99B2D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "ClassLibrary1\Negocio.csproj", "{3D03CFDD-06E8-4415-A4FB-EE85ECBED2F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{C64EC6BD-026B-48BF-8223-629F9135E3DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{AC0F383F-52A6-4F07-A9DB-FEE3BA99B2D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC0F383F-52A6-4F07-A9DB-FEE3BA99B2D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC0F383F-52A6-4F07-A9DB-FEE3BA99B2D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D03CFDD-06E8-4415-A4FB-EE85ECBED2F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D03CFDD-06E8-4415-A4FB-EE85ECBED2F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D03CFDD-06E8-4415-A4FB-EE85ECBED2F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D03CFDD-06E8-4415-A4FB-EE85ECBED2F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C64EC6BD-026B-48BF-8223-629F9135E3DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64EC6BD-026B-48BF-8223-629F9135E3DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64EC6BD-026B-48BF-8223-629F9135E3DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64EC6BD-026B-48BF-8223-629F9135E3DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

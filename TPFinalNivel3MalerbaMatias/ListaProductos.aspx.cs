@@ -13,8 +13,13 @@ namespace TPFinalNivel3MalerbaMatias
         protected void Page_Load(object sender, EventArgs e)
         {
             Negocio.NegocioArticulos negocioArticle = new Negocio.NegocioArticulos();
-            ProductCatalog.DataSource = negocioArticle.ReadArticle();
+            ProductCatalog.DataSource = negocioArticle.ReadArticles();
             ProductCatalog.DataBind();
+        }
+
+        protected void BtnAgregar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

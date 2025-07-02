@@ -9,8 +9,8 @@ namespace Negocio
 {
     public class NegocioArticulos
     {
-        public List<Articulos> ReadArticle() { 
-			List<Articulos> articleList = new List<Articulos>();
+        public List<Articulo> ReadArticles() { 
+			List<Articulo> articleList = new List<Articulo>();
             DbConnection connection = new DbConnection();
 			try
 			{
@@ -19,7 +19,7 @@ namespace Negocio
 				connection.ReadQuery();
 
 				while (connection.Reader.Read()) { 
-					Articulos articles = new Articulos();
+					Articulo articles = new Articulo();
 					articles.Id = (int)connection.Reader["Id"];
                     articles.Codigo = (string)connection.Reader["Codigo"];
                     articles.Nombre = (string)connection.Reader["Nombre"];
@@ -40,6 +40,40 @@ namespace Negocio
 
 				throw ex;
 			}
+
+        }
+
+        public Articulo ReadArticle(int Id)
+        {
+            Articulo article = new Articulo();
+            DbConnection connection = new DbConnection();
+            try
+            {
+
+                connection.SetProcedure("ReadAnArticulo");
+                connection.SetParameter("@Id", Id);
+                connection.ReadQuery();
+
+                while (connection.Reader.Read())
+                {
+                    article.Id = (int)connection.Reader["Id"];
+                    article.Codigo = (string)connection.Reader["Codigo"];
+                    article.Nombre = (string)connection.Reader["Nombre"];
+                    article.Descripcion = (string)connection.Reader["Descripcion"];
+                    article.Marca.Id = (int)connection.Reader["IdMarca"];
+                    article.Categoria.Id = (int)connection.Reader["IdCategoria"];
+                    article.ImagenUrl = (string)connection.Reader["ImagenUrl"];
+                    article.Precio = (decimal)connection.Reader["Precio"];
+                }
+
+                return article;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
 
         }
     }

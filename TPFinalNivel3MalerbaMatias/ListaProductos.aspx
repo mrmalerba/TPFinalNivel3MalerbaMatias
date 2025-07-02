@@ -13,10 +13,14 @@
                 <ItemTemplate>
                     <div class="col">
                         <div class="card">
-                            <img src="<%#Eval("ImagenUrl") %>" class="card-img-top" alt="...">
+                            <div class="text-center"  height="400px">
+                                <img src="<%#Eval("ImagenUrl") %>" class="<%-- card-img-top --%>img-fluid" alt="<%#Eval("Codigo") + "_Imagen" %>">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title"><%#Eval("Nombre") %></h5>
                                 <p class="card-text"><%#Eval("Descripcion") %></p>
+                                <a href="DetalleProducto.aspx?Id=<%#Eval("Id")%>" class="btn btn-primary">Ver detalles</a>
+                                <asp:Button id="BtnAgregar" CssClass="btn btn-primary" Text="Agregar al Carrito" runat="server" OnClick="BtnAgregar_Click" CommandArgument='<%#Eval("Id")%>' CommandName="AgregarArticulo" />
                             </div>
                         </div>
                     </div>

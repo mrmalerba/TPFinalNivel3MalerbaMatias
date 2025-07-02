@@ -32,6 +32,11 @@ namespace Negocio
             command.CommandText = procedure;
         }
 
+        public void SetParameter(string parameter, object value)
+        {
+            command.Parameters.AddWithValue(parameter, value);
+        }
+
         public void ReadQuery()
         {
             command.Connection = connection;

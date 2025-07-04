@@ -67,18 +67,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdministracionProducto.aspx" />
+    <Content Include="AgregarModificarEliminarProducto.aspx" />
     <Content Include="DetalleProducto.aspx" />
+    <Content Include="Favoritos.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListaProductos.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="PerfilDeUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdministracionProducto.aspx.cs">
+      <DependentUpon>AdministracionProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdministracionProducto.aspx.designer.cs">
+      <DependentUpon>AdministracionProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarModificarEliminarProducto.aspx.cs">
+      <DependentUpon>AgregarModificarEliminarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AgregarModificarEliminarProducto.aspx.designer.cs">
+      <DependentUpon>AgregarModificarEliminarProducto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DetalleProducto.aspx.cs">
       <DependentUpon>DetalleProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DetalleProducto.aspx.designer.cs">
       <DependentUpon>DetalleProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Favoritos.aspx.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Favoritos.aspx.designer.cs">
+      <DependentUpon>Favoritos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -90,12 +116,26 @@
     <Compile Include="ListaProductos.aspx.designer.cs">
       <DependentUpon>ListaProductos.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="PerfilDeUsuario.aspx.cs">
+      <DependentUpon>PerfilDeUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerfilDeUsuario.aspx.designer.cs">
+      <DependentUpon>PerfilDeUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

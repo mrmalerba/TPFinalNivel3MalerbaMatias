@@ -23,9 +23,11 @@ namespace Negocio
 					articles.Id = (int)connection.Reader["Id"];
                     articles.Codigo = (string)connection.Reader["Codigo"];
                     articles.Nombre = (string)connection.Reader["Nombre"];
-                    articles.Descripcion = (string)connection.Reader["Descripcion"];
+                    articles.Descripcion = (string)connection.Reader["DescipcionArticulos"];
                     articles.Marca.Id = (int)connection.Reader["IdMarca"];
+                    articles.Marca.Descripcion = connection.Reader["DescripcionMarca"].ToString();
                     articles.Categoria.Id = (int)connection.Reader["IdCategoria"];
+                    articles.Categoria.Descripcion = connection.Reader["DescripcionCategoria"].ToString();
                     articles.ImagenUrl = (string)connection.Reader["ImagenUrl"];
                     articles.Precio = (decimal)connection.Reader["Precio"];
 
@@ -42,6 +44,46 @@ namespace Negocio
 			}
 
         }
+
+        public List<Articulo> ReadFavouritesArticles(int userId)
+        {
+            List<Articulo> articleList = new List<Articulo>();
+            DbConnection connection = new DbConnection();
+            try
+            {
+
+                connection.SetProcedure("ReadFavouritesArticles");
+                connection.SetParameter("@IdUser", userId);
+                connection.ReadQuery();
+
+                while (connection.Reader.Read())
+                {
+                    Articulo articles = new Articulo();
+                    articles.Id = (int)connection.Reader["Id"];
+                    articles.Codigo = (string)connection.Reader["Codigo"];
+                    articles.Nombre = (string)connection.Reader["Nombre"];
+                    articles.Descripcion = (string)connection.Reader["DescipcionArticulos"];
+                    articles.Marca.Id = (int)connection.Reader["IdMarca"];
+                    articles.Marca.Descripcion = connection.Reader["DescripcionMarca"].ToString();
+                    articles.Categoria.Id = (int)connection.Reader["IdCategoria"];
+                    articles.Categoria.Descripcion = connection.Reader["DescripcionCategoria"].ToString();
+                    articles.ImagenUrl = (string)connection.Reader["ImagenUrl"];
+                    articles.Precio = (decimal)connection.Reader["Precio"];
+
+                    articleList.Add(articles);
+                }
+
+                return articleList;
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+        }
+
 
         public Articulo ReadArticle(int Id)
         {

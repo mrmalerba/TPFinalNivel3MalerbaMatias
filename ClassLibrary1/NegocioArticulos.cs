@@ -53,7 +53,7 @@ namespace Negocio
             {
 
                 connection.SetProcedure("ReadFavouritesArticles");
-                connection.SetParameter("@IdUser", userId);
+                connection.SetParameter("@Id", userId);
                 connection.ReadQuery();
 
                 while (connection.Reader.Read())
@@ -117,6 +117,46 @@ namespace Negocio
                 throw ex;
             }
 
+        }
+
+        public int InsertArticle(Articulo article)
+        {
+            DbConnection connection = new DbConnection();
+            connection.SetProcedure("InsertArticle");
+            connection.SetParameter("@Codigo", (Object)article.Codigo ?? DBNull.Value);
+            connection.SetParameter("@Nombre", (Object)article.Nombre ?? DBNull.Value);
+            connection.SetParameter("@Descripcion", (Object)article.Descripcion ?? DBNull.Value);
+            connection.SetParameter("@IdMarca", (Object)article.Marca.Id ?? DBNull.Value);
+            connection.SetParameter("@IdCategoria", (Object)article.Categoria.Id ?? DBNull.Value);
+            connection.SetParameter("@ImagenUrl", (Object)article.ImagenUrl ?? DBNull.Value);
+            connection.SetParameter("@Precio", (Object)article.Precio ?? DBNull.Value);
+            int newId = connection.ExecuteScalar();
+
+            return newId;
+
+        }
+
+        public void UpdateArticle(Articulo article)
+        {
+            DbConnection connection = new DbConnection();
+            connection.SetProcedure("UpdateArticle");
+            connection.SetParameter("@Id", article.Id);
+            connection.SetParameter("@Codigo", (Object)article.Codigo ?? DBNull.Value);
+            connection.SetParameter("@Nombre", (Object)article.Nombre ?? DBNull.Value);
+            connection.SetParameter("@Descripcion", (Object)article.Descripcion ?? DBNull.Value);
+            connection.SetParameter("@IdMarca", (Object)article.Marca.Id ?? DBNull.Value);
+            connection.SetParameter("@IdCategoria", (Object)article.Categoria.Id ?? DBNull.Value);
+            connection.SetParameter("@ImagenUrl", (Object)article.ImagenUrl ?? DBNull.Value);
+            connection.SetParameter("@Precio", (Object)article.Precio ?? DBNull.Value);
+            connection.ReadQuery();
+        }
+
+        public void DeleteArticulo(int productId)
+        {
+            DbConnection connection = new DbConnection();
+            connection.SetProcedure("DeleteArticulo");
+            connection.SetParameter("Id", productId);
+            connection.ReadQuery();
         }
     }
 }

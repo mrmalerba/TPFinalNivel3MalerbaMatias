@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Dominio;
+using Negocio;
 
 namespace TPFinalNivel3MalerbaMatias
 {
@@ -13,7 +14,7 @@ namespace TPFinalNivel3MalerbaMatias
         protected void Page_Load(object sender, EventArgs e)
         {
             //Validar Si sesion iniciada, sino reenviar a Login
-            if (Session["user"] != null)
+            if (NegocioSecurity.IsLoguedIn((User)Session["user"]))
             {
                 Negocio.NegocioArticulos negocioArticle = new Negocio.NegocioArticulos();
                 ProductCatalog.DataSource = negocioArticle.ReadFavouritesArticles(((User)Session["user"]).Id);
@@ -21,7 +22,12 @@ namespace TPFinalNivel3MalerbaMatias
             }
             else
             {
-                Response.Redirect("Login.aspx", false);
+                ErrorManagement errorManagement = new ErrorManagement();
+                errorManagement.ManageError("Para ingresar a la página de Favoritos, debe Ingresar con un usuario", "Login.aspx", "Ir a la pagina de Ingreso");
+                //Session.Add("ErrorMessage", "Para ingresar a la página de Favoritos, debe Ingresar con un usuario" );
+                //Session.Add("RedirectUrl", "Login.aspx");
+                //Session.Add("BtnText", "Ir a la página de Ingreso");
+                //Response.Redirect("ErrorPage.aspx", false);
             }
         }
 

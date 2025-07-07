@@ -32,6 +32,7 @@ namespace TPFinalNivel3MalerbaMatias
                 NegocioArticulos negocioArticulos = new NegocioArticulos();
                 Articulo article = negocioArticulos.ReadArticle(int.Parse(Request.QueryString["Id"]));
 
+                
                 txtId.Text = article.Id.ToString();
                 txtCodigo.Text = article.Codigo.ToString();
                 txtNombre.Text = article.Nombre.ToString();

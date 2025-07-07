@@ -70,6 +70,7 @@
     <Content Include="AdministracionProducto.aspx" />
     <Content Include="AgregarModificarEliminarProducto.aspx" />
     <Content Include="DetalleProducto.aspx" />
+    <Content Include="ErrorPage.aspx" />
     <Content Include="Favoritos.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ListaProductos.aspx" />
@@ -98,6 +99,14 @@
     </Compile>
     <Compile Include="DetalleProducto.aspx.designer.cs">
       <DependentUpon>DetalleProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorManagement.cs" />
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Favoritos.aspx.cs">
       <DependentUpon>Favoritos.aspx</DependentUpon>

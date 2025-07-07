@@ -15,6 +15,15 @@ namespace TPFinalNivel3MalerbaMatias
     {
 
         /// <summary>
+        /// HeaderNombreDeUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl HeaderNombreDeUsuario;
+
+        /// <summary>
         /// txtNombre control.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,22 @@ namespace TPFinalNivel3MalerbaMatias
         protected global::System.Web.UI.WebControls.TextBox txtEMail;
 
         /// <summary>
-        /// ProductImage control.
+        /// lblTipoDeUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image ProductImage;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblTipoDeUsuario;
+
+        /// <summary>
+        /// productImage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image productImage;
 
         /// <summary>
         /// btnGuardarPerfil control.
@@ -58,5 +76,14 @@ namespace TPFinalNivel3MalerbaMatias
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarPerfil;
+
+        /// <summary>
+        /// btnCerrarPerfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCerrarPerfil;
     }
 }
